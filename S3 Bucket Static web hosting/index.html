@@ -1,0 +1,243 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Information</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      color: #000;
+      font-family: 'Nunito', sans-serif;
+    }
+
+    .testimonial {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 5rem;
+    }
+
+    h1 {
+      margin: 20px 0;
+    }
+
+    .line {
+      height: 2px;
+      width: 6rem;
+      background-color: #e26c4f;
+      margin-bottom: calc(3rem + 2vmin);
+    }
+
+    .arrow-wrapper {
+      position: relative;
+      width: 70%;
+      border-radius: 2rem;
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      overflow: hidden;
+      place-items: center;
+    }
+
+    .review-wrap {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-top: calc(2rem + 1vmin);
+      width: 100%;
+    }
+
+    #imgBox {
+      border-radius: 60%;
+      width: calc(8rem + 6vmin);
+      height: calc(8rem + 6vmin);
+      position: relative;
+      box-shadow: 5px -3px #e26c4f;
+      background-size: cover;
+      margin-bottom: calc(0.7rem + 0.5vmin);
+    }
+
+    #name {
+      margin-bottom: calc(0.7rem + 0.5vmin);
+      font-size: calc(1rem + 0.5vmin);
+      letter-spacing: calc(0.1rem + 0.1vmin);
+      font-weight: bold;
+    }
+
+    #profession {
+      font-size: calc(0.8rem + 0.3vmin);
+      margin-bottom: calc(0.7rem + 0.5vmin);
+      color: #e26c4f;
+    }
+
+    #description {
+      font-size: calc(0.8rem + 0.3vmin);
+      width: 70%;
+      max-width: 90rem;
+      text-align: center;
+      margin-bottom: calc(1.4rem + 1vmin);
+      color: rgb(92, 92, 92);
+      line-height: 2rem;
+    }
+
+    .arrow {
+      width: calc(1.4rem + 0.6vmin);
+      height: calc(1.4rem + 0.6vmin);
+      border: solid #e26c4f;
+      border-width: 0 calc(0.5rem + 0.2vmin) calc(0.5rem + 0.2vmin) 0;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .arrow:hover {
+      transition: 0.3s;
+      transform: scale(1.15);
+    }
+    .button {
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  margin: 3px 2px;
+  cursor: pointer;
+}
+
+.button1 {background-color: #04AA6D;} /* Green */
+.button2 {background-color: #008CBA;} /* Blue */
+
+
+
+    @media screen and (max-width: 900px) {
+      .testimonial {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="testimonial">
+    <h2>Ashish</h2>
+    <div class="line"></div>
+     <h3>Sport Cars</h3>
+     <h4>Website Number 1</h4>
+     <a href= "ashish.html"><button class="button button1">Go to Website 2</button></a>
+    <h3>4 pages website using S3</h3>
+    <!-- arrow wrapper contains the review and the arrows -->
+    <div class="arrow-wrapper">
+      <!-- review section -->
+      <div id="reviewWrap" class="review-wrap">
+        <div id="imgBox"></div>
+        <div id="name"></div>
+        <div id="profession"></div>
+        <div id="description"></div>
+      </div>
+     
+  </div>
+
+  <script>
+    const reviewWrap = document.getElementById("reviewWrap");
+    const leftArrow = document.querySelector(".left-arrow-wrap .arrow");
+    const rightArrow = document.querySelector(".right-arrow-wrap .arrow");
+    const imgBox = document.getElementById("imgBox");
+    const name = document.getElementById("name");
+    const profession = document.getElementById("profession");
+    const description = document.getElementById("description");
+
+    let people = [{
+        photo: 'url("https://etimg.etb2bimg.com/photo/105266250.cms")',
+        name: "FERRARI",
+        profession: "SF90 XX Stradle",
+        description: "Ferrari’s Special Version cars push the performance of its production models to new extremes. Some, such as the 488 Pista and 812 Competizione, have earned a rightful place in the Prancing Horse’s recent pantheon. Ferrari’s ‘XX Programme’, on the other hand, offers a select group of expert client drivers extreme cars that are not homologated for the road, to drive on the very limit on the track. One such model is the FXX-K EVO."
+      },
+      {
+        photo: "url('https://images.unsplash.com/photo-1621285865999-06e67c8ed0f3?q=80&w=1365&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
+        name: "LAMBORGHINI",
+        profession: "Huracan Evo",
+        description: "The Lamborghini Huracan has 1 Petrol Engine on offer. The Petrol engine is 5204 cc . It is available with Automatic transmission.Depending upon the variant and fuel type the Huracan has a mileage of 10.6 to 11.24 kmpl & Ground clearance of Huracan is 125mm. The Huracan is a 2 seater 10 cylinder car and has length of 4459mm, width of 1924mm and a wheelbase of 2620mm."
+      },
+      {
+        photo: "url('https://hips.hearstapps.com/hmg-prod/images/404575191-1801381220291342-9128094259577270129-n-655e1d3f4e2ac.jpg?resize=1200:*')",
+        name: "PAGANI",
+        profession: "Huayra",
+        description: "The Huayra has a top speed of about 383 km/h (238 mph) and it has a 0-97 km/h (60 mph) acceleration time of 2.8 seconds. Using Pirelli tyres, the Pagani Huayra is capable of 1.66 g of lateral acceleration. The Pagani Huayra uses a seven-speed sequential gearbox and a single disc clutch."
+      },
+      {
+        photo: "url('https://cdn.carbuzz.com/gallery-images/1600/396000/900/396973.jpg')",
+        name: "KOENIGSEGG",
+        profession: "Agera",
+        description: "The Agera RS produces 450 kg of downforce at 250 km/h. The 5.0-litre V8 engine now has a power output of 1,176 PS (865 kW; 1,160 hp) on regular pump gasoline. The optional 1-megawatt package increases the engine's power to 1,360 PS (1,000 kW; 1,341 hp)."
+      }
+    ];
+
+    // set the first person
+    imgBox.style.backgroundImage = people[0].photo;
+    name.innerText = people[0].name;
+    profession.innerText = people[0].profession;
+    description.innerText = people[0].description;
+    let currentPerson = 0;
+
+    //Select the side where you want to slide
+    function slide(side, personNumber) {
+      let reviewWrapWidth = reviewWrap.offsetWidth + "px";
+      let descriptionHeight = description.offsetHeight + "px";
+      //(+ or -)
+      let side1symbol = side === "left" ? "" : "-";
+      let side2symbol = side === "left" ? "-" : "";
+
+      setTimeout(() => {
+        imgBox.style.backgroundImage = people[personNumber].photo;
+      }, 0);
+      setTimeout(() => {
+        description.style.height = descriptionHeight;
+      }, 100);
+      setTimeout(() => {
+        name.innerText = people[personNumber].name;
+      }, 200);
+      setTimeout(() => {
+        profession.innerText = people[personNumber].profession;
+      }, 300);
+      setTimeout(() => {
+        description.innerText = people[personNumber].description;
+      }, 400);
+    }
+
+    function setNextCardLeft() {
+      if (currentPerson === 3) {
+        currentPerson = 0;
+        slide("left", currentPerson);
+      } else {
+        currentPerson++;
+      }
+
+      slide("left", currentPerson);
+    }
+
+    function setNextCardRight() {
+      if (currentPerson === 0) {
+        currentPerson = 3;
+        slide("right", currentPerson);
+      } else {
+        currentPerson--;
+      }
+
+      slide("right", currentPerson);
+    }
+
+    leftArrow.addEventListener("click", setNextCardLeft);
+    rightArrow.addEventListener("click", setNextCardRight);
+  </script>
+</body>
